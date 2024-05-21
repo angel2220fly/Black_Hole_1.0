@@ -333,12 +333,12 @@ class compression:
                                                                         
                                                                
 
-                                                                    if  Find==2 or En3==8191:
+                                                                    if  Find==2 or En3==8189:
                                                                                 Find=1
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En3==8191 and Find==3:
+                                                                    elif En3==8189 and Find==3:
                                                                         smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                         
                                                                         if smallest_longl_F_values:
@@ -372,7 +372,7 @@ class compression:
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, longl_F = smallest_longl_F_values
                                                                              input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"Longl_F="+str(longl_F)+" / "
-                                                                             #print(input_string)
+                                                                            
                                                                              
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
