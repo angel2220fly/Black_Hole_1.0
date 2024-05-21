@@ -22,7 +22,7 @@ class compression:
                 def Count_adds(M1,En,En1,En3):
                         
                         En3+=1
-                        if En3==7:
+                        if En3==8191:
                             En3=0
                         if M1==0:
                                 En-=1
