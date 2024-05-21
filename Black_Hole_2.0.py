@@ -367,7 +367,7 @@ class compression:
                                                                         
                                                                         
                                                                         
-                                                                        if len(input_string)>10000:
+                                                                        if len(input_string)>100:
                                                                          smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, longl_F = smallest_longl_F_values
