@@ -22,7 +22,7 @@ class compression:
                 def Count_adds(M1,En,En1,En3):
                         
                         En3+=1
-                        if En3==8191:
+                        if En3==7:
                             En3=0
                         if M1==0:
                                 En-=1
@@ -36,8 +36,6 @@ class compression:
                                 En1+=1
                                 M1=0
                                 En=255
-                        if En1==31:
-                            En1=0
                         
                                 
                         return M1,En,En1,En3
@@ -219,7 +217,6 @@ class compression:
                                                     input_string=""
                                                     C1=""
                                                     En3=0
-                                                    
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -335,12 +332,12 @@ class compression:
                                                                         
                                                                
 
-                                                                    if  Find==2 or En1==30:
+                                                                    if  Find==2 or En3==8190:
                                                                                 Find=1
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En1==29 and Find==3:
+                                                                    elif En3==8189 and Find==3:
                                                                         smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                         
                                                                         if smallest_longl_F_values:
@@ -358,23 +355,22 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4)+8+13+13+8+len(C1)+5 < long_11*8:
+                                                                    elif len(Z4)+8+13+3+8+len(C1) < long_11*8:
                                                                         
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
-                                                                        #print(input_string)
                                                                    
                                                                         
                                                                     
                                                                         
                                                                         
                                                                         
-                                                                        if len(input_string)>100:
+                                                                        if len(input_string)>10000:
                                                                          smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, longl_F = smallest_longl_F_values
                                                                              input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"Longl_F="+str(longl_F)+" / "
-                                                                            
+                                                                             #print(input_string)
                                                                              
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
@@ -400,8 +396,8 @@ class compression:
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
-                                                                CL3=format(En1,'05b')
-                                                                CL4=format(En3,'013b')
+                                                                CL3=format(En1,'03b')
+                                                                CL4=format(En3,'03b')
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -477,13 +473,13 @@ class compression:
                                                             
                                     INFO=Extract
 
-                                    En3=int(INFO[:13],2)
+                                    En3=int(INFO[:3],2)
                                         #print(longl)
-                                    INFO=INFO[13:]
+                                    INFO=INFO[3:]
                                     
-                                    En2=int(INFO[:5],2)
+                                    En2=int(INFO[:3],2)
                                         #print(longl)
-                                    INFO=INFO[5:]
+                                    INFO=INFO[3:]
                                         
                                     En=int(INFO[:13],2)
                                         #print(longl)
