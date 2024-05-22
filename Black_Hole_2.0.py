@@ -19,10 +19,10 @@ class compression:
 
                
 
-                def Count_adds(M1,En,En1,En3,En4):
+                def Count_adds(M1,En,En1,En3):
                         
                         En3+=1
-                        if En3==En4:
+                        if En3==8191:
                             En3=0
                         if M1==0:
                                 En-=1
@@ -34,17 +34,11 @@ class compression:
                                                                                       
                         if En==8191:                                                                    
                                 En1+=1
-                                
                                 M1=0
                                 En=255
-                        if En1==En4:
-                            En1=0
-                            En4=8191
-                            M1=0
-                            En=255
                         
-                              
-                        return M1,En,En1,En3,En4
+                                
+                        return M1,En,En1,En3
                 
 
              
@@ -223,7 +217,6 @@ class compression:
                                                     input_string=""
                                                     C1=""
                                                     En3=0
-                                                    En4=7
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -304,7 +297,7 @@ class compression:
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
                                                                                    if En1!=0 and block+En1+En-En3<=long_F:
-                                                                                           Z5="011"+C1+C[:En-En3]+INFO_A1
+                                                                                           Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1-En3
                                                                                    #print(Z5) 
                                                                                        
@@ -383,14 +376,14 @@ class compression:
                                                                                                                                                                                                                                                                                        
 
                                                                         Find=3
-                                                                        M1,En,En1,En3,En4=Count_adds(M1,En,En1,En3,En4)
+                                                                        M1,En,En1,En3=Count_adds(M1,En,En1,En3)
                                                                         
                                                                         
                                                                              #print(En)
                                                                              #print(len(Z4))   
                                                                              
                                                                     else:
-                                                                             M1,En,En1,En3,En4=Count_adds(M1,En,En1,En3,En4)
+                                                                             M1,En,En1,En3=Count_adds(M1,En,En1,En3)
                                                                              
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                                     if Ci==1:               
@@ -403,7 +396,7 @@ class compression:
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
-                                                                CL3=format(En1,'013b')
+                                                                CL3=format(En1,'03b')
                                                                 CL4=format(En3,'013b')
                                                                
                                                                 #print(N3)
@@ -484,9 +477,9 @@ class compression:
                                         #print(longl)
                                     INFO=INFO[13:]
                                     
-                                    En2=int(INFO[:13],2)
+                                    En2=int(INFO[:3],2)
                                         #print(longl)
-                                    INFO=INFO[13:]
+                                    INFO=INFO[3:]
                                         
                                     En=int(INFO[:13],2)
                                         #print(longl)
