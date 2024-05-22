@@ -22,6 +22,7 @@ class compression:
                 def Count_adds(M1,En,En1,En3):
                         
                         En3+=1
+                      
                         if En3==8191:
                             En3=0
                         if M1==0:
@@ -33,7 +34,7 @@ class compression:
                                 M1=1
                                                                                       
                         if En==8191:                                                                    
-                                En1+=1
+                                
                                 M1=0
                                 En=255
                         
@@ -396,7 +397,7 @@ class compression:
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
-                                                                CL3=format(En1,'03b')
+                                                                
                                                                 CL4=format(En3,'013b')
                                                                
                                                                 #print(N3)
@@ -410,7 +411,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL4+CL3+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL4+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -477,9 +478,7 @@ class compression:
                                         #print(longl)
                                     INFO=INFO[13:]
                                     
-                                    En2=int(INFO[:3],2)
-                                        #print(longl)
-                                    INFO=INFO[3:]
+                                    En2=0
                                         
                                     En=int(INFO[:13],2)
                                         #print(longl)
