@@ -22,7 +22,7 @@ class compression:
                 def Count_adds(M1,En,En1,En3):
                         
                         
-                      
+                        En3+=1
                         if En3==(8192*4)-1:
                             En3=0
                         if M1==0:
@@ -34,7 +34,7 @@ class compression:
                                 M1=1
                                                                                       
                         if En==(8192*4)-1:                                                                    
-                                En3+=1
+                                
                                 M1=0
                                 En=255
                         
@@ -337,7 +337,7 @@ class compression:
                                                                         #print(Find)
                                                                         block+=En
                                                                     CL2=format(En,'01b')
-                                                                    CL4=format(En3,'01b')
+                                                                    
 
                                                                     if  Find==2 or En3==(8192*4)-2:
                                                                                 Find=1
@@ -405,9 +405,9 @@ class compression:
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'01b')
                                                                 
-                                                                CL4=format(En3,'01b')
+                                                            
                                                                 CL5=format(len(CL2),'04b')
-                                                                CL6=format(len(CL4),'04b')
+                                                              
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -420,7 +420,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL6+CL5+CL4+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL5+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -483,16 +483,12 @@ class compression:
                                                             
                                     INFO=Extract
                                     
-                                    
-                                    En3_1=int(INFO[:4],2)
-                                    INFO=INFO[4:]
+                               
                                     
                                     En_1=int(INFO[:4],2)
                                     INFO=INFO[4:]
 
-                                    En3=int(INFO[:En3_1],2)
-                                        #print(longl)
-                                    INFO=INFO[En3_1:]
+                            
                                     
                                     En2=0
                                         
