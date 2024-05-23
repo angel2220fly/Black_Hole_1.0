@@ -362,11 +362,11 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4) < long_1
+                                                                    elif  long_11*8==long_11*8:
                                                                         
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
-                                                                        #print(input_string)
+                                                                     
                                                                    
                                                                         
                                                                     
@@ -379,7 +379,7 @@ class compression:
                                                                              en, en2, en3, longl_F = smallest_longl_F_values
                                                                              input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"Longl_F="+str(longl_F)+" / "
                                                                              #print(input_string)
-                                                                             
+                                                                                 
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
 
