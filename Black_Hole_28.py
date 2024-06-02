@@ -406,7 +406,7 @@ class compression:
                                                                 CL2=format(En,'01b')
                                                                 
                                                             
-                                                                CL5=format(len(CL2),'04b')
+                                                                CL5=format(len(CL2),'06b')
                                                               
                                                                
                                                                 #print(N3)
@@ -485,8 +485,8 @@ class compression:
                                     
                                
                                     
-                                    En_1=int(INFO[:4],2)
-                                    INFO=INFO[4:]
+                                    En_1=int(INFO[:6],2)
+                                    INFO=INFO[6:]
 
                             
                                     
