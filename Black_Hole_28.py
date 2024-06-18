@@ -403,10 +403,10 @@ class compression:
 
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
-                                                                CL2=format(En,'01b')
+                                                                CL2=format(En,'015b')
                                                                 
                                                             
-                                                                CL5=format(len(CL2),'06b')
+
                                                               
                                                                
                                                                 #print(N3)
@@ -420,7 +420,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL5+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -485,16 +485,13 @@ class compression:
                                     
                                
                                     
-                                    En_1=int(INFO[:6],2)
-                                    INFO=INFO[6:]
+                         
 
                             
                                     
                                     En2=0
                                         
-                                    En=int(INFO[:En_1],2)
-                                        #print(longl)
-                                    INFO=INFO[En_1:]
+                                 
                                     
                                     if En<=15:
                                         longl=int(INFO[:4],2)
